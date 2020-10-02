@@ -4,23 +4,23 @@
   <title></title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body onscroll="checkElementsInView()" onload="isAtTop()">
+<body onscroll="checkElementsInView()">
 
-  <div class="title">
-    <h1>'I Was Put On A List': How Iceland's Contact Tracing Kept Its Infections Low</h1>
+  <div class="title" id="title">
+    <h1>'I Was Put On A List': How Iceland's Closely Monitored Contact Tracing Kept Its Outbreaks Under Control</h1>
     <p>Life in Iceland has remained relatively normal during the COVID-19 pandemic. The Department of Public Safety keeps strict tabs on citizens who test positive for the virus and those who <i>might</i>, leading to very managed minor outbreaks.</p>
   </div>
 
   <img class="hero-img" src="iceland_contact_tracing.png" width="90%">
 
   <div class="body" style="margin-top: 100px; margin-bottom: 100px;">
-    <p>Scroll down to follow one person's story interacting with this system.</p>
+    <p id="directions">Scroll down to follow one person's story interacting with this system.</p>
   </div>
 
   <div class="scroll-container">
     <div class="scroll-graphics">
 
-      <figure id="graphic-1">
+      <figure id="graphic-1" class="img-fade">
         <img src="man_smiling.png" width="70%">
       </figure>
 
@@ -36,6 +36,8 @@
         <img src="health.png" width="70%">
       </figure>
     </div>
+
+    <div style="height:500px">  </div>
 
     <div class="scroll-text">
 
@@ -216,6 +218,12 @@
   </ul>
 
   <button id="restart" class="hide" onclick="refresh()">Restart</button>
+
+  <footer>
+    <div>
+      <p>Content, illustrations and development by Chloe Langston.</p>
+    </div>
+  </footer>
 
   <script type="text/javascript" src="sketch.js"></script>
 </body>

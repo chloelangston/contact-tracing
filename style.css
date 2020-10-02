@@ -13,6 +13,23 @@ html {
   color: #000408;
 }
 
+body {
+  height: auto;
+}
+
+footer {
+  margin-top: 500px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: @screen-sm-max) {
+    html, body {
+        overflow: auto !important;
+    }
+}
+
 .flow-decision-tree {
   box-sizing: border-box;
   outline: none;
@@ -188,10 +205,6 @@ html {
   display: none !important;
 }
 
-.img-fade {
-  display: none !important;
-  opacity: 0;
-}
 
 .title, .body {
   text-align: center;
@@ -202,7 +215,7 @@ html {
   width: 40%;
   position: absolute;
   left: 50%;
-  top: 100px;
+  top: 110px;
 }
 
 .title h1, .title p {
@@ -215,7 +228,7 @@ html {
 }
 
 .hero-img {
-  margin: 50px auto 50px auto;
+  margin: 30px auto 50px auto;
   display: block;
 }
 
@@ -233,11 +246,24 @@ html {
   margin: auto;
 }
 
+.img-fade {
+  /*display: none !important;*/
+  height: 0;
+  opacity: 0 !important;
+}
+
+.scroll-graphics figure {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+  height: auto;
+}
+
 .scroll-graphics img {
   display: block;
-  margin: 0px auto;
-  opacity: 1;
-  animation: fade 3s;
+  position: relative;
+  position: absolute;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes fade {
@@ -251,7 +277,7 @@ html {
 }
 
 .scroll-text div {
-  margin: 500px auto;
+  margin: 600px auto;
   width: 400px;
 }
 
@@ -262,7 +288,7 @@ html {
 }
 
 #text-1 {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 #text-4 {
