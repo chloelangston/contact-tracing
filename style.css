@@ -1,0 +1,277 @@
+@font-face {
+  font-family: lora;
+  src: url(Lora-Regular.ttf);
+}
+
+@font-face {
+  font-family: lora-bold;
+  src: url(Lora-Bold.ttf);
+}
+
+html {
+  font-family: lora;
+  color: #000408;
+}
+
+.flow-decision-tree {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
+  font-size: 1vw;
+  margin-bottom: 200px;
+}
+
+.flow-decision-tree *,
+.flow-decision-tree *::after,
+.flow-decision-tree *::before {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flow-decision-tree ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  position: relative;
+  padding: 0;
+}
+
+.flow-decision-tree .lines-v-u:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 1em;
+  border-left: 3px solid #000408;
+}
+
+.flow-decision-tree > ul {
+  padding: 0;
+}
+
+.flow-decision-tree li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 2em 1em 0 1em;
+}
+
+.flow-decision-tree .lines-h:before {
+  content: '';
+  position: absolute;
+  top: 1em;
+  width: 100%;
+  border-top: 3px solid #000408;
+}
+
+.flow-decision-tree .lines-v-i:after {
+  content: '';
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  height: 1em;
+  border-left: 3px solid #000408;
+}
+
+.flow-decision-tree li:first-child:before {
+  left: 50%;
+  width: 50%;
+}
+
+.flow-decision-tree li:last-child:before {
+  right: 50%;
+  width: 50%;
+}
+
+.flow-decision-tree li:only-child:before {
+  display: none;
+}
+
+.flow-decision-tree > li {
+  padding: 0;
+}
+
+.flow-decision-tree > li:before, .flow-decision-tree > li:after {
+  display: none;
+}
+
+.terminator {
+  display: flex;
+  align-items: center;
+  padding: 2em 4em;
+  border-radius: 2vw;
+  background-color: #B7DBDF;
+  font-family: lora-bold;
+  font-size: 18px;
+}
+
+.process {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  background-color: #B7DBDF;
+  max-width: 200px;
+  border-radius: 1vw;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #000408;
+  font-family: lora;
+  font-size: 14px;
+}
+
+.process:hover, #start:hover {
+  background-color: #6FB3BB;
+  color: white;
+}
+
+.no-hover {
+    pointer-events: none;
+}
+
+.decision {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 2em 4em;
+  background-color: white;
+  border-radius: 1vw;
+  font-family: lora-bold;
+  font-size: 18px;
+  border: 1px solid #000408;
+}
+
+#start {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #B7DBDF;
+  border-radius: 1vw;
+  font-family: lora-bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#restart {
+  display: block;
+  margin: 0px auto;
+  align-items: center;
+  padding: 1em 2em;
+  background-color: #B7DBDF;
+  border-radius: 1vw;
+  font-family: lora-bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: -150px;
+}
+
+.fade {
+  background-color: #C7C7C7 !important;
+  color: #585858;
+}
+
+.hide {
+  display: none !important;
+}
+
+.img-fade {
+  display: none !important;
+  opacity: 0;
+}
+
+.title, .body {
+  text-align: center;
+  margin: 0px auto;
+}
+
+.title {
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+}
+
+.title h1, .title p {
+  position: relative;
+  left: -50%;
+}
+
+.body {
+  width: 50%;
+}
+
+.hero-img {
+  margin: 50px auto 50px auto;
+  display: block;
+}
+
+.scroll-graphics {
+  position: sticky;
+  z-index: -1;
+  max-width: 100%;
+  bottom: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.scroll-graphics img {
+  display: block;
+  margin: 0px auto;
+  opacity: 1;
+  animation: fade 3s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.scroll-text div {
+  margin: 500px auto;
+  width: 400px;
+}
+
+.scroll-text div p {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#text-1 {
+  margin-top: 200px;
+}
+
+#text-4 {
+  margin-bottom: 500px;
+}
+
+#text-end {
+  visibility: hidden;
+  margin-bottom: 200px;
+  margin-top: 0px;
+}
+

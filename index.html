@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onscroll="checkElementsInView()" onload="isAtTop()">
+
+  <div class="title">
+    <h1>'I Was Put On A List': How Iceland's Contact Tracing Kept Its Infections Low</h1>
+    <p>Life in Iceland has remained relatively normal during the COVID-19 pandemic. The Department of Public Safety keeps strict tabs on citizens who test positive for the virus and those who <i>might</i>, leading to very managed minor outbreaks.</p>
+  </div>
+
+  <img class="hero-img" src="iceland_contact_tracing.png" width="90%">
+
+  <div class="body" style="margin-top: 100px; margin-bottom: 100px;">
+    <p>Scroll down to follow one person's story interacting with this system.</p>
+  </div>
+
+  <div class="scroll-container">
+    <div class="scroll-graphics">
+
+      <figure id="graphic-1">
+        <img src="man_smiling.png" width="70%">
+      </figure>
+
+      <figure id="graphic-2" class="img-fade">
+        <img src="list_names.png" width="70%">
+      </figure>
+
+      <figure id="graphic-3" class="img-fade">
+        <img src="man_phone.png" width="70%">
+      </figure>
+
+      <figure id="graphic-4" class="img-fade">
+        <img src="health.png" width="70%">
+      </figure>
+    </div>
+
+    <div class="scroll-text">
+
+      <div id="text-1">
+        <p>This is Pall. He lives in Reykjavik, Iceland.</p>
+
+        <p>In September, Pall's roommate tested positive for Covid-19.</p>
+      </div>
+
+      <div id="text-2">
+        <p>The Department of Public Safety required Pall's roommate to make list of names and contact information of all the people he had interacted with in the last 5 days.</p>
+
+        <p>Pall was on the list.</p>
+      </div>
+
+      <div id="text-3">
+        <p>Pall received a phone call immediately from a representative telling him he was required to quarantine for 1 week, then attend his scheduled Covid test.</p>
+
+        <p>Breaking quarantine would be considered breaking the law.</p>
+      </div>
+
+      <div id="text-4">
+        <p>One week later, Pall attended his scheduled test in his area. Fortunately, it was negative.</p>
+        <p>If he had not attended, he would have been contacted by the representative again. He is now free to not quarantine.</p>
+      </div>
+
+      <div id="text-end">
+        <p>empty</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="body">
+    <p>Use the tool below to see what someone in Iceland would be directed to do in regards to their contact tracing program.</p>
+  </div>
+  
+  <ul class="flow-decision-tree">
+    <li>
+      <span id="start" onclick="start();">Start</span>
+      <ul class="lines-v-u hide" id="decision-tree-list">
+        <li class="lines-v-i">
+          <span class="decision">Have you been in Iceland for more than 5 days or did you just enter?</span>
+          <ul class="lines-v-u">
+            <li class="lines-h lines-v-i">
+              <span class="process" data-option="a">I have been in Iceland for more than 5 days.</span>
+              <ul class="">
+                <li class="">
+
+                  <span class="decision hide">Did you test positive for COVID-19 in the last 2 weeks?</span>
+                  <ul class="decision-element hide lines-v-u">
+                    <li class="lines-h lines-v-i">
+                      <span class="process" data-option="a">Yes</span>
+                      <ul>
+                        <li>
+
+                          <span class="decision hide">Have you interacted with anyone in the past 5 days?</span>
+                          <ul class="decision-element hide lines-v-u">
+                            <li class="lines-h lines-v-i">
+                              <span class="process process-last" data-option="a">Yes</span>
+                              <ul>
+                                <li>
+                                  <span class="decision-element terminator hide">You and anyone you interacted with in the past 5 days quarantine for 2 weeks.</span>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="lines-h lines-v-i">
+                              <span class="process process-last" data-option="b">No</span>
+                              <ul>
+                                <li>
+                                  <span class="decision-element terminator hide">You quarantine for 2 weeks.</span>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="lines-h lines-v-i">
+                      <span class="process" data-option="b">No</span>
+                      <ul>
+                        <li>
+                          <span class="decision hide">Have you interacted with anyone in the past 2 weeks who has tested positive for COVID-19?</span>
+                          <ul class="decision-element hide lines-v-u">
+                            <li class="lines-h lines-v-i">
+                              <span class="process process-last" data-option="a">Yes</span>
+                              <ul>
+                                <li>
+                                  <span class="decision-element terminator hide">Quarantine for 2 weeks.</span>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="lines-h lines-v-i">
+                              <span class="process process-last" data-option="b">No</span>
+                              <ul>
+                                <li>
+                                  <span class="decision-element terminator hide">No need to quarantine.</span>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+
+            <li class="lines-h lines-v-i">
+              <span class="process" data-option="b">I just entered Iceland.</span>
+              <ul class="">
+                <li class="">
+
+                  <span class="decision hide">Would you like to be tested or quarantined?</span>
+                  <ul class="decision-element hide lines-v-u">
+                    <li class="lines-h lines-v-i">
+                      <span class="process" data-option="a">Tested</span>
+                      <ul>
+                        <li>
+
+                          <span class="decision hide">You are tested at the airport. Is it positive or negative?</span>
+                          <ul class="decision-element hide lines-v-u">
+                            <li class="lines-h lines-v-i">
+                              <span class="process process-last" data-option="a">Positive</span>
+                              <ul>
+                                <li>
+                                  <span class="decision-element terminator hide">Quarantine for 2 weeks.</span>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="lines-h lines-v-i">
+                              <span class="process" data-option="b">Negative</span>
+                              <ul>
+                                <li>
+                                  <span class="decision hide ">Quarantine for 5 days. Then get another test. Is it positive or negative?</span>
+                                  <ul class="decision-element hide lines-v-u">
+                                    <li class="lines-h lines-v-i">
+                                      <span class="process process-last" data-option="a">Positive</span>
+                                      <ul>
+                                        <li>
+                                          <span class="decision-element terminator hide">Quarantine for 2 weeks.</span>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                    <li class="lines-h lines-v-i">
+                                      <span class="process process-last" data-option="b">Negative</span>
+                                      <ul>
+                                        <li>
+                                          <span class="decision-element terminator hide">No need to quarantine.</span>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="lines-h lines-v-i">
+                      <span class="process process-last" data-option="b">Quarantine</span>
+                      <ul>
+                        <li>
+                          <span class="decision-element terminator hide">Quarantine for 2 weeks.</span>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <button id="restart" class="hide" onclick="refresh()">Restart</button>
+
+  <script type="text/javascript" src="sketch.js"></script>
+</body>
+</html>
